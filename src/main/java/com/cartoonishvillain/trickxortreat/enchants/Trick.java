@@ -13,7 +13,7 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 public class Trick extends Enchantment {
-    protected Trick(Rarity p_44676_, EnchantmentCategory p_44677_, EquipmentSlot[] p_44678_) {
+    public Trick(Rarity p_44676_, EnchantmentCategory p_44677_, EquipmentSlot[] p_44678_) {
         super(p_44676_, EnchantmentCategory.WEAPON, p_44678_);
     }
 
@@ -39,7 +39,7 @@ public class Trick extends Enchantment {
             if(random < chance){
                 random = p_44686_.getRandom().nextInt(TrickXORTreat.tricksounds.size() + TrickXORTreat.trickeffects.size());
                 if(!(random >= TrickXORTreat.tricksounds.size())) {
-                    p_44686_.level.playSound(null, p_44686_.getOnPos(), TrickXORTreat.tricksounds.get(random), SoundSource.MASTER, 0.8f, 1);
+                    p_44686_.level.playSound(null, p_44686_.getOnPos(), TrickXORTreat.tricksounds.get(random), SoundSource.PLAYERS, 0.8f, 1);
                 }else{
                     random -= TrickXORTreat.tricksounds.size();
                     if (p_44687_ instanceof LivingEntity)
