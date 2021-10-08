@@ -25,7 +25,7 @@ public class Trick extends Enchantment {
 
     @Override
     protected boolean checkCompatibility(Enchantment p_44690_) {
-        return !(p_44690_ instanceof Treat);
+        return !(p_44690_ instanceof Treat) && !(p_44690_ instanceof Trick);
     }
 
     @Override

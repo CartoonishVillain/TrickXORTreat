@@ -21,7 +21,7 @@ modId="trickxortreat" #mandatory
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version="${file.jarVersion}" #mandatory
  # A display name for the mod
-displayName="Example Mod" #mandatory
+displayName="Trick XOR Treat" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -34,10 +34,19 @@ displayName="Example Mod" #mandatory
 authors="Cartoonish Villain" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
+By default, a minecraft player can not go trick or treating. This is sad, because halloween is coming up.
+
+This mod adds two enchantments for swords, Trick and Treat. A sword, by default can only have one of these two enchants.
+
+Trick has a chance to play a random sound out of a list of mildly concerning sounds, or apply debuffs to the target.
+
+Treat has a chance to make a living entity drop candy whenever hit with the blade.
+
+Candies, given that they drop due to magical causes, have magical properties.
 
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
+[[dependencies.trickxortreat]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -49,7 +58,7 @@ description='''
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.trickxortreat]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version

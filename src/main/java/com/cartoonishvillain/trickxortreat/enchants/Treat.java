@@ -8,6 +8,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -25,7 +26,7 @@ public class Treat extends Enchantment {
 
     @Override
     protected boolean checkCompatibility(Enchantment p_44690_) {
-        return !(p_44690_ instanceof Trick);
+        return !(p_44690_ instanceof Treat) && !(p_44690_ instanceof Trick);
     }
 
     @Override
@@ -36,7 +37,7 @@ public class Treat extends Enchantment {
         chance = chance * p_44688_;
         if(!p_44686_.level.isClientSide()){
             int random = p_44686_.getRandom().nextInt(100);
-            if(random <= chance && p_44687_ instanceof LivingEntity){
+            if(random <= chance && p_44687_ instanceof LivingEntity && !(p_44687_ instanceof Player)){
                 random = p_44686_.getRandom().nextInt(TrickXORTreat.candies.size());
                 ItemEntity item = new ItemEntity(EntityType.ITEM, p_44686_.level);
                 item.setPos(p_44687_.getX(), p_44687_.getY(), p_44687_.getZ());
