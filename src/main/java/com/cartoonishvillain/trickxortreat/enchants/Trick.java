@@ -1,20 +1,17 @@
 package com.cartoonishvillain.trickxortreat.enchants;
 
 import com.cartoonishvillain.trickxortreat.TrickXORTreat;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
-import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentType;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.SoundCategory;
 
 public class Trick extends Enchantment {
-    public Trick(Rarity p_44676_, EnchantmentCategory p_44677_, EquipmentSlot[] p_44678_) {
-        super(p_44676_, EnchantmentCategory.WEAPON, p_44678_);
+    public Trick(Rarity p_44676_, EnchantmentType p_44677_, EquipmentSlotType[] p_44678_) {
+        super(p_44676_, EnchantmentType.WEAPON, p_44678_);
     }
 
 
@@ -39,11 +36,11 @@ public class Trick extends Enchantment {
             if(random < chance){
                 random = p_44686_.getRandom().nextInt(TrickXORTreat.tricksounds.size() + TrickXORTreat.trickeffects.size());
                 if(!(random >= TrickXORTreat.tricksounds.size())) {
-                    p_44686_.level.playSound(null, p_44686_.getOnPos(), TrickXORTreat.tricksounds.get(random), SoundSource.PLAYERS, 0.8f, 1);
+                    p_44686_.level.playSound(null, p_44686_.blockPosition(), TrickXORTreat.tricksounds.get(random), SoundCategory.PLAYERS, 0.8f, 1);
                 }else{
                     random -= TrickXORTreat.tricksounds.size();
                     if (p_44687_ instanceof LivingEntity)
-                        ((LivingEntity) p_44687_).addEffect(new MobEffectInstance(TrickXORTreat.trickeffects.get(random), 200, 0));
+                        ((LivingEntity) p_44687_).addEffect(new EffectInstance(TrickXORTreat.trickeffects.get(random), 200, 0));
                 }
             }
 

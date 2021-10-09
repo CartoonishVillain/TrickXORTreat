@@ -1,30 +1,31 @@
 package com.cartoonishvillain.trickxortreat.items;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
+
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Candy extends Item {
-    ArrayList<ChatFormatting> textFormattings;
-    ArrayList<MobEffectInstance> effectInstances;
+    ArrayList<TextFormatting> textFormattings;
+    ArrayList<EffectInstance> effectInstances;
     ArrayList<String> extraLore;
-    public Candy(Item.Properties properties, ArrayList<MobEffectInstance> effectInstances, ArrayList<ChatFormatting> textFormattings, @Nullable ArrayList<String> extraLore) {
+    public Candy(Item.Properties properties, ArrayList<EffectInstance> effectInstances, ArrayList<TextFormatting> textFormattings, @Nullable ArrayList<String> extraLore) {
         super(properties);
         this.effectInstances = effectInstances;
         this.textFormattings = textFormattings;
         this.extraLore = extraLore;
     }
 
-    public String GetEffect(MobEffectInstance instance){
+    public String GetEffect(EffectInstance instance){
         String name = instance.getDescriptionId();
         String[] split = name.split("\\.");
         String[] split2 = split[2].split("_");
@@ -46,11 +47,11 @@ public class Candy extends Item {
             name = name + " " + name2;
         else name = name;
         return name;}
-    public String GetAmplifier(MobEffectInstance instance){return PotentBuilder(instance.getAmplifier());}
-    public String GetDuration(MobEffectInstance instance){return TimeBuilder(instance.getDuration());}
+    public String GetAmplifier(EffectInstance instance){return PotentBuilder(instance.getAmplifier());}
+    public String GetDuration(EffectInstance instance){return TimeBuilder(instance.getDuration());}
 
 
-    public ArrayList<MobEffectInstance> getEffectInstance() {return effectInstances;}
+    public ArrayList<EffectInstance> getEffectInstance() {return effectInstances;}
 
     private String PotentBuilder(int potency){
         switch(potency){
@@ -93,24 +94,26 @@ public class Candy extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         short counter = 0;
-        for(MobEffectInstance instance : effectInstances){
+        for(EffectInstance instance : effectInstances){
             String effect = this.GetEffect(instance);
             String amplifier = this.GetAmplifier(instance);
             String duration = this.GetDuration(instance);
             String msg;
             msg = textFormattings.get(counter) + effect + " " + amplifier + " " + duration;
             counter++;
-            tooltip.add(new TextComponent(msg));}
+            tooltip.add(new StringTextComponent(msg));}
         if(extraLore != null) {
             for (String extras : extraLore) {
                 String msg;
                 msg = textFormattings.get(counter) + extras;
                 counter++;
-                tooltip.add(new TextComponent(msg));
+                tooltip.add(new StringTextComponent(msg));
             }
         }
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
+
+
 }
