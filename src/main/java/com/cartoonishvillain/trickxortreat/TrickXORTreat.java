@@ -9,12 +9,14 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import samebutdifferent.trickortreat.registry.ModItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,15 @@ public class TrickXORTreat
     private void setup(final FMLCommonSetupEvent event)
     {
         candies = new ArrayList<Item>(List.of(Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.PRISMATICFLESH.get()));
+        if(ModList.get().isLoaded("trickortreat") && config.trickOrTreatCompat.get()){
+
+            //Add another pile of entries for my own candies to artificially make the next ones more rare, since it isn't my mod.
+            candies.addAll(List.of(Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.PRISMATICFLESH.get()));
+            candies.addAll(List.of(Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.PRISMATICFLESH.get()));
+
+            //additional modded candy
+            candies.addAll(List.of(ModItems.FIREFINGERS.get(), ModItems.FIZZLERS.get(), ModItems.DEADISH_FISH.get(), ModItems.PEARL_POP.get(), ModItems.SCREAMBURSTS.get(), ModItems.EYECE_CREAM.get(), ModItems.MEMBRANE_BUTTER_CUPS.get(), ModItems.BONEBREAKER.get(), ModItems.SLIME_GUM.get(), ModItems.CHOCOLATE_SPIDER_EYE.get(), ModItems.SOUR_PATCH_ZOMBIES.get()));
+        }
     }
 
 
