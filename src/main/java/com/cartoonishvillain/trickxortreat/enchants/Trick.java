@@ -28,7 +28,7 @@ public class Trick extends Enchantment {
     @Override
     public void doPostAttack(LivingEntity p_44686_, Entity p_44687_, int p_44688_) {
         super.doPostAttack(p_44686_, p_44687_, p_44688_);
-        int chance = 5;
+        int chance = TrickXORTreat.config.baseTrickChance.get();
         //assuming p_44688_ is level
         chance = chance * p_44688_;
         if(!p_44686_.level.isClientSide()){
