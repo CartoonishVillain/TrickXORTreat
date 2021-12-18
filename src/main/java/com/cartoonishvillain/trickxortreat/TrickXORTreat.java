@@ -53,7 +53,7 @@ public class TrickXORTreat
             candies.addAll(List.of(Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.CREEPERCOCHOCOLATE.get(), Register.FLAMINGDOTS.get(), Register.SUGARBONE.get(), Register.CLOUDCANDY.get(), Register.DOLPHINCRUNCH.get(), Register.HEROICBAR.get(), Register.PIGMENTCOIN.get(), Register.RABBITCANDY.get(), Register.PRISMATICFLESH.get()));
 
             //additional modded candy
-            candies.addAll(List.of(ModItems.FIREFINGERS.get(), ModItems.FIZZLERS.get(), ModItems.DEADISH_FISH.get(), ModItems.PEARL_POP.get(), ModItems.SCREAMBURSTS.get(), ModItems.EYECE_CREAM.get(), ModItems.MEMBRANE_BUTTER_CUPS.get(), ModItems.BONEBREAKER.get(), ModItems.SLIME_GUM.get(), ModItems.CHOCOLATE_SPIDER_EYE.get(), ModItems.SOUR_PATCH_ZOMBIES.get()));
+//            candies.addAll(List.of(ModItems.FIREFINGERS.get(), ModItems.FIZZLERS.get(), ModItems.DEADISH_FISH.get(), ModItems.PEARL_POP.get(), ModItems.SCREAMBURSTS.get(), ModItems.EYECE_CREAM.get(), ModItems.MEMBRANE_BUTTER_CUPS.get(), ModItems.BONEBREAKER.get(), ModItems.SLIME_GUM.get(), ModItems.CHOCOLATE_SPIDER_EYE.get(), ModItems.SOUR_PATCH_ZOMBIES.get()));
         }
     }
 

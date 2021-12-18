@@ -1,14 +1,9 @@
 package com.cartoonishvillain.trickxortreat;
 
-import com.cartoonishvillain.trickxortreat.TrickXORTreat;
 import com.cartoonishvillain.trickxortreat.enchants.Treat;
 import com.cartoonishvillain.trickxortreat.enchants.Trick;
 import com.cartoonishvillain.trickxortreat.items.Candy;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.resources.sounds.Sound;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -18,13 +13,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Register {
 
