@@ -2,7 +2,6 @@ package com.cartoonishvillain.trickxortreat.items;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -102,13 +101,13 @@ public class Candy extends Item {
             String msg;
             msg = textFormattings.get(counter) + effect + " " + amplifier + " " + duration;
             counter++;
-            tooltip.add(new TextComponent(msg));}
+            tooltip.add(Component.literal(msg));}
         if(extraLore != null) {
             for (String extras : extraLore) {
                 String msg;
                 msg = textFormattings.get(counter) + extras;
                 counter++;
-                tooltip.add(new TextComponent(msg));
+                tooltip.add(Component.literal(msg));
             }
         }
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
