@@ -21,6 +21,9 @@ public class Events {
             buildContents.accept(PRISMATICFLESH);
             buildContents.accept(FLAMINGDOTS);
             buildContents.accept(DOLPHINCRUNCH);
+            buildContents.accept(VILLAGEBITE);
+            buildContents.accept(GUARDIANGUMMY);
+            buildContents.accept(SCUTESNACKS);
         }
     }
 }
