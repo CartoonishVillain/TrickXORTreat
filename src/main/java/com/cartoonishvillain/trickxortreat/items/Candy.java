@@ -41,10 +41,8 @@ public class Candy extends Item {
             tooltip.add(Component.literal(msg));}
         if(extraLore != null) {
             for (String extras : extraLore) {
-                String msg;
-                msg = textFormattings.get(counter) + extras;
+                tooltip.add(Component.translatable(extras).withStyle(textFormattings.get(counter)));
                 counter++;
-                tooltip.add(Component.literal(msg));
             }
         }
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
