@@ -9,5 +9,9 @@
   "item.trickxortreat.flaming_dots": "Blazing Dots",
   "item.trickxortreat.dolphin_crunch": "Dolphin Crunch",
   "enchantment.trickxortreat.trick": "Trick",
-  "enchantment.trickxortreat.treat": "Treat"
+  "enchantment.trickxortreat.treat": "Treat",
+  "trick.trickxortreat.playsound": "Strange sounds emanate from your weapon.",
+  "trick.trickxortreat.effect": "A magical bolt shoots into your target, giving them %1$s.",
+  "trick.trickxortreat.teleport": "A magical bolt shoots into your target, teleporting them a short distance.",
+  "trick.trickxortreat.ignite": "A magical bolt shoots into your target, igniting them."
 }
