@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-   "layer0": "trickxortreat:items/sugar_bone"
+   "layer0": "trickxortreat:item/sugar_bone"
  }
 }

@@ -35,15 +35,15 @@ public class Treat extends Enchantment {
         int chance = TrickXORTreat.config.baseTreatChance.get();
         //assuming p_44688_ is level
         chance = chance * p_44688_;
-        if(!p_44686_.level.isClientSide()){
+        if(!p_44686_.level().isClientSide()){
             int random = p_44686_.getRandom().nextInt(100);
             if(random <= chance && p_44687_ instanceof LivingEntity && !(p_44687_ instanceof Player)){
                 random = p_44686_.getRandom().nextInt(TrickXORTreat.candies.size());
-                ItemEntity item = new ItemEntity(EntityType.ITEM, p_44686_.level);
+                ItemEntity item = new ItemEntity(EntityType.ITEM, p_44686_.level());
                 item.setPos(p_44687_.getX(), p_44687_.getY(), p_44687_.getZ());
                 item.setItem(new ItemStack(TrickXORTreat.candies.get(random)));
-                p_44686_.level.addFreshEntity(item);
-                p_44686_.level.playSound(null, p_44687_.getOnPos(), SoundEvents.CHICKEN_EGG, SoundSource.MASTER, 1, 1);
+                p_44686_.level().addFreshEntity(item);
+                p_44686_.level().playSound(null, p_44687_.getOnPos(), SoundEvents.CHICKEN_EGG, SoundSource.MASTER, 1, 1);
             }
         }
     }

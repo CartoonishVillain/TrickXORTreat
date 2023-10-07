@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-   "layer0": "trickxortreat:items/prismatic_flesh"
+   "layer0": "trickxortreat:item/prismatic_flesh"
  }
 }

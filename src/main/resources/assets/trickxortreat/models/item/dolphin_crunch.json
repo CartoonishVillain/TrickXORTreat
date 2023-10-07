@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-   "layer0": "trickxortreat:items/dolphin_crunch"
+   "layer0": "trickxortreat:item/dolphin_crunch"
  }
 }

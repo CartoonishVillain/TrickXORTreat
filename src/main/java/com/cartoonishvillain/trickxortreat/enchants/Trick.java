@@ -34,12 +34,12 @@ public class Trick extends Enchantment {
         int chance = TrickXORTreat.config.baseTrickChance.get();
         //assuming p_44688_ is level
         chance = chance * p_44688_;
-        if(!p_44686_.level.isClientSide()){
+        if(!p_44686_.level().isClientSide()){
             int random = p_44686_.getRandom().nextInt(100);
             if(random < chance){
                 random = p_44686_.getRandom().nextInt(TrickXORTreat.tricksounds.size() + TrickXORTreat.trickeffects.size());
                 if(!(random >= TrickXORTreat.tricksounds.size())) {
-                    p_44686_.level.playSound(null, p_44686_.getOnPos(), TrickXORTreat.tricksounds.get(random), SoundSource.PLAYERS, 0.8f, 1);
+                    p_44686_.level().playSound(null, p_44686_.getOnPos(), TrickXORTreat.tricksounds.get(random), SoundSource.PLAYERS, 0.8f, 1);
                 }else{
                     random -= TrickXORTreat.tricksounds.size();
                     if (p_44687_ instanceof LivingEntity)
